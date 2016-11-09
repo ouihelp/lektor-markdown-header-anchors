@@ -48,7 +48,7 @@ class MarkdownHeaderAnchorsPlugin(Plugin):
             def header(renderer, text, level, raw):
                 anchor = slugify(raw)
                 renderer.meta['toc'].append((level, anchor, Markup(text)))
-                return '<h{level:d} id="{anchor}">{text}</h{level:d}>'.format(
+                return u'<h{level:d} id="{anchor}">{text}</h{level:d}>'.format(
                     level=renderer.adjusted_header_level(level),
                     anchor=anchor,
                     text=text,
